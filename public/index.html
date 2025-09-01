@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Painel em Tempo Real • Socket.IO</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Socket.IO Client -->
+  <script src="/socket.io/socket.io.js"></script>
+  <!-- Chart.js (extra) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Painel em Tempo Real</h1>
+    <p class="subtitle">Node.js + Express + Socket.IO</p>
+  </header>
+
+  <main>
+    <section class="cards">
+      <div class="card">
+        <div class="card-title">Usuários Online</div>
+        <div id="totalUsers" class="big-number">0</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Sala mais populosa</div>
+        <div id="popularRoom" class="big-number">—</div>
+        <div id="popularRoomCount" class="muted">0 usuários</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Trocar de Sala</div>
+        <form id="roomForm">
+          <input id="roomInput" type="text" placeholder="Ex.: sala1, vendas, suporte..." required />
+          <button type="submit">Entrar</button>
+        </form>
+        <p id="joinedInfo" class="muted"></p>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <h2>Ranking de Salas</h2>
+        <ol id="rankingList" class="ranking"></ol>
+      </div>
+
+      <div class="panel">
+        <h2>Evolução de Usuários Online</h2>
+        <canvas id="usersChart" height="120"></canvas>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Alertas</h2>
+      <div id="alerts"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Atividade Prática 03 • Atualiza a cada 1s</small>
+  </footer>
+
+  <script src="client.js"></script>
+</body>
+</html>

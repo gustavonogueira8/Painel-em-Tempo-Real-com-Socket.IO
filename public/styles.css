@@ -1,0 +1,112 @@
+:root {
+  --bg: #0b1020;
+  --panel: #131a33;
+  --text: #e6e8ef;
+  --muted: #a7aec6;
+  --accent: #5b8cff;
+  --ok: #18b36b;
+  --warn: #ffb020;
+  --danger: #ef4444;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(1000px 500px at 0% 0%, #101736 0, #0b1020 60%);
+  color: var(--text);
+  font: 16px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  min-height: 100%;
+}
+
+header {
+  padding: 28px 20px 8px 20px;
+  text-align: center;
+}
+header h1 { margin: 0 0 6px; font-size: 28px; letter-spacing: 0.4px; }
+.subtitle { margin: 0; color: var(--muted); }
+
+main { padding: 16px; max-width: 1100px; margin: 0 auto; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.card, .panel {
+  background: linear-gradient(145deg, #111834, #0e142a);
+  border: 1px solid #1c2752;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.card-title { color: var(--muted); margin-bottom: 8px; font-size: 14px; }
+.big-number { font-size: 42px; font-weight: 800; letter-spacing: 1px; }
+.muted { color: var(--muted); }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+#roomForm {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  margin-top: 4px;
+}
+#roomForm input {
+  padding: 10px 12px;
+  border-radius: 12px;
+  outline: none;
+  border: 1px solid #26305e;
+  background: #0f1630;
+  color: var(--text);
+}
+#roomForm button {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #2e3a76;
+  background: linear-gradient(145deg, #1a2661, #15204f);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: .3px;
+}
+#roomForm button:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.ranking {
+  margin: 0;
+  padding-left: 18px;
+}
+.ranking li {
+  padding: 6px 0;
+}
+
+.alert {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #2e3a76;
+  margin: 8px 0;
+}
+.alert.ok { background: rgba(24,179,107,0.12); }
+.alert.warn { background: rgba(255,176,32,0.12); }
+.alert.danger { background: rgba(239,68,68,0.12); }
+
+footer {
+  text-align: center;
+  padding: 24px 8px 40px 8px;
+  color: var(--muted);
+}
